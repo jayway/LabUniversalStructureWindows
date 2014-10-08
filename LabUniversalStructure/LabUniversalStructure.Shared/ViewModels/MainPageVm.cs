@@ -14,7 +14,7 @@ namespace LabUniversalStructure.ViewModels
     {
         public BitmapImage Image { get; set; }
 
-        public void GetImage()
+        public async void GetImage()
         {
             var openPicker = new FileOpenPicker
             {
@@ -22,7 +22,14 @@ namespace LabUniversalStructure.ViewModels
                 SuggestedStartLocation = PickerLocationId.PicturesLibrary
             };
             openPicker.FileTypeFilter.Add(".jpg");
+#if WINDOWS_PHONE_APP
             openPicker.PickSingleFileAndContinue();
+#else
+            var file = await openPicker.PickSingleFileAsync();
+
+            SetImage(file);
+#endif
+
         }
 
         public async void SetImage(StorageFile file)
