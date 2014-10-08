@@ -29,7 +29,7 @@ namespace LabUniversalStructure
         public MainPage()
         {
             this.InitializeComponent();
-            DataContext = _vm = new MainPageVm();
+            DataContext = _vm = new MainPagePhoneVm();
 
             this.NavigationCacheMode = NavigationCacheMode.Required;
         }

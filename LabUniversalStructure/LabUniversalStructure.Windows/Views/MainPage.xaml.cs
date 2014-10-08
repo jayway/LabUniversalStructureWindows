@@ -28,7 +28,7 @@ namespace LabUniversalStructure
         public MainPage()
         {
             this.InitializeComponent();
-            DataContext = _vm = new MainPageVm();
+            DataContext = _vm = new MainPageWinVm();
 
             this.NavigationCacheMode = NavigationCacheMode.Required;
         }
