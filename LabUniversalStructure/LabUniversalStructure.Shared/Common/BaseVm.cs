@@ -6,7 +6,7 @@ using System.Text;
 
 namespace LabUniversalStructure.Common
 {
-    class BaseVm : INotifyPropertyChanged
+    public class BaseVm : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
     }

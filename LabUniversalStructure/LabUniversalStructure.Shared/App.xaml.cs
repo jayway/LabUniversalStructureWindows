@@ -17,6 +17,7 @@ using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Navigation;
 
 // The Blank Application template is documented at http://go.microsoft.com/fwlink/?LinkId=234227
+using LabUniversalStructure.Interface;
 
 namespace LabUniversalStructure
 {
@@ -27,6 +28,11 @@ namespace LabUniversalStructure
     {
 #if WINDOWS_PHONE_APP
         private TransitionCollection transitions;
+
+        public static IPickFile Pf = new PickFilePhone();
+#endif
+#if WINDOWS_APP
+        public static IPickFile Pf = new PickFileWin();
 #endif
 
         /// <summary>

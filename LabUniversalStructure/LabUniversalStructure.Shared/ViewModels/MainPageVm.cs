@@ -7,10 +7,11 @@ using Windows.System.UserProfile;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Imaging;
 using LabUniversalStructure.Common;
+using LabUniversalStructure.Interface;
 
 namespace LabUniversalStructure.ViewModels
 {
-    class MainPageVm :BaseVm
+    public class MainPageVm : BaseVm
     {
         public BitmapImage Image { get; set; }
 
@@ -22,7 +23,7 @@ namespace LabUniversalStructure.ViewModels
                 SuggestedStartLocation = PickerLocationId.PicturesLibrary
             };
             openPicker.FileTypeFilter.Add(".jpg");
-            openPicker.PickSingleFileAndContinue();
+            App.Pf.PickFile(openPicker, this);
         }
 
         public async void SetImage(StorageFile file)
